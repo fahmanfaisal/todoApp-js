@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>To Do App</title>
+</head>
+<style>
+    .update{
+        background-color: #7B8EA0;
+        color: white;
+        padding: 8px 12px;
+        text-align: center;
+        font-size: medium;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
+    .update:hover{
+        background-color: #374151; 
+    }
+    .delete{
+        background-color: #ED9292;
+        color: white;
+        text-align: center;
+        padding: 8px 8px;
+        margin-left: 5px;
+        border-radius: 6px;
+        margin-top: 5px;
+
+    }
+    .delete:hover{
+        background-color: #DC2626;
+    }
+</style>
+<body>
+    <section class="my-10 bg-gray-200">
+        <div class="mx-auto md:px-20 py-5 rounded shadow-medium bg-green-700 grid justify-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd" />
+            </svg>
+            <p class="text-2xl text-white py-4 font-semibold ">TO-DO APP</p>
+            <form class="new-task-container">
+                <div class="py-4 px-2 md:px-60 bg-white text-black rounded">
+                    <label for="new-task">ADD New Task: </label><input type="text" id="new-task" class="ml-1 rounded bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black-600 focus:ring-opacity-50" type="text"/>
+                    <input type="submit" value="Add Task" id="addTask" onclick="addTask" class="py-1 ml-2 px-2 text-base text-white rounded  bg-green-400 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50" />
+                </div>
+            </form>
+        </div>
+        <div class="mx-auto md:px-20 py-5 rounded shadow-medium bg-green-700 grid grid-flow-col grid-cols-2 grid-rows-1 gap-0 justify-items-center ">
+                <div class="bg-white p-6 rounded">
+                    <div class="todo-list">
+                        <p class="text-2xl py-1 font-bold">
+                            Incomplete Tasks
+                        </p>
+                        <hr>
+                        <ul id="items">
+                            <li class="py-5 px-2 item"><input type="checkbox" />
+                                <label>Task Name</label>
+                                <button class="update py-1 ml-12 px-2 text-md text-white rounded  bg-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50">Update</button>
+                            </li>
+                            <li class="py-5 px-2 item"><input type="checkbox" />
+                                <label>Task Name</label>
+                                <button class="update py-1 ml-12 px-2 text-md text-white rounded  bg-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50">Update</button>
+                            </li>
+                            <li class="py-5 px-2 item"><input type="checkbox" />
+                                <label>Task Name</label>
+                                <button class="update py-1 ml-12 px-2 text-md text-white rounded  bg-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50">Update</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded">
+                    <div>
+                        <p class="text-2xl py-1 font-bold">
+                            Completed Tasks
+                        </p>
+                        <hr>
+                        <ul id="items2">
+                            <li class="py-5 px-2 item">
+                                <label>Task Name</label>
+                                <button class="delete py-1 ml-12 px-2 text-md text-white rounded  bg-red-400 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50">Delete</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"> </script>
+</body>
+</html>
